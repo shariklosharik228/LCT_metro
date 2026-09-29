@@ -16,6 +16,9 @@ docker run --rm -it --net=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-u
   bag_topic:=/sensing/lidar/hesai128/pointcloud fixed_frame:=lidar_livox
 ```
 
+Или через Docker Compose: `BAG_PATH=/absolute/path/to/doubleT_obstacle docker compose up --build`
+(переменные `BAG_TOPIC`, `FIXED_FRAME`, `RVIZ=false` — по необходимости).
+
 Без RViz: добавьте `rviz:=false`. Для записей с топиком `/lidar_points`:
 `bag_topic:=/lidar_points fixed_frame:=hesai_lidar`.
 

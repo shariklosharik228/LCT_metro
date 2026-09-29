@@ -1,0 +1,20 @@
+# Usage:
+#   BAG_PATH=/absolute/path/to/doubleT_obstacle docker compose up --build
+# Without RViz window: RVIZ=false BAG_PATH=... docker compose up --build
+# For RViz on Linux first run: xhost +local:docker
+services:
+  detector:
+    build: .
+    image: metro-obstacle
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+    volumes:
+      - ${BAG_PATH:-./bag}:/data/bag:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: >
+      ros2 launch metro_obstacle_ros demo.launch.py
+      bag_path:=/data/bag
+      bag_topic:=${BAG_TOPIC:-/sensing/lidar/hesai128/pointcloud}
+      fixed_frame:=${FIXED_FRAME:-lidar_livox}
+      rviz:=${RVIZ:-true}
