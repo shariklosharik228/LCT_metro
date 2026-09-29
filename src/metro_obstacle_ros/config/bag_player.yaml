@@ -1,0 +1,9 @@
+metro_bag_player:
+  ros__parameters:
+    bag_path: ""
+    bag_topic: /lidar_points
+    output_topic: /lidar_points
+    loop: true
+    rate: 1.0
+    read_ahead_queue_size: 10
+    start_paused: false

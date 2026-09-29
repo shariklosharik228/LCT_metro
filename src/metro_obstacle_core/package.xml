@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<package format="3"><name>metro_obstacle_core</name><version>1.0.0</version>
+<description>Rail geometry and obstacle detection core.</description>
+<maintainer email="team@example.com">Metro team</maintainer><license>Apache-2.0</license>
+<buildtool_depend>ament_python</buildtool_depend>
+<exec_depend>python3-numpy</exec_depend><exec_depend>python3-scipy</exec_depend>
+<exec_depend>python3-sklearn</exec_depend><test_depend>python3-pytest</test_depend>
+<export><build_type>ament_python</build_type></export></package>
